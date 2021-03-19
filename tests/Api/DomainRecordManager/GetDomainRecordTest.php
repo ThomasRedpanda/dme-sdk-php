@@ -22,7 +22,7 @@ class GetDomainRecordTest extends ApiTestCase
 		$recordClient = $this->getMockedClient(
 			200,
 			(string) file_get_contents(__DIR__ . '/data/domain_records_get_success.json'),
-			self::assertRoute('GET', '/V2.0/dns/managed/1119443/records/1119443')
+			self::assertRoute('GET', '/V2.0/dns/managed/1119443/records')
 		);
 
 		$domainRecordManager = new DomainRecordManager($recordClient);
