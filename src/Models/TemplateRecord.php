@@ -33,7 +33,7 @@ class TemplateRecord extends Record implements TemplateRecordInterface
      */
     public function setTemplate(TemplateInterface $template): self
     {
-        if ($this->template) {
+        if ($this->template !== null) {
             throw new ReadOnlyPropertyException('Template can only be set once');
         }
         $this->template = $template;
@@ -45,7 +45,7 @@ class TemplateRecord extends Record implements TemplateRecordInterface
      *
      * @return TemplateInterface|null
      */
-    protected function getTemplate(): ?TemplateInterface
+    public function getTemplate(): ?TemplateInterface
     {
         return $this->template;
     }
@@ -55,7 +55,7 @@ class TemplateRecord extends Record implements TemplateRecordInterface
      *
      * @return int|null
      */
-    protected function getTemplateId(): ?int
+    public function getTemplateId(): ?int
     {
         if (! $this->template) {
             return null;

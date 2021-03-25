@@ -41,7 +41,7 @@ class Template extends AbstractModel implements TemplateInterface
      *
      * @return TemplateRecordManagerInterface
      */
-    protected function getRecords(): TemplateRecordManagerInterface
+    public function getRecords(): TemplateRecordManagerInterface
     {
         if (! $this->recordManager) {
             $this->recordManager = new TemplateRecordManager($this->client);
